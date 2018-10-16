@@ -1,5 +1,5 @@
 <?php 
-	$link =	mysqli_connect("oniddb.cws.oregonstate.edu","hezhi-db", "J3NL61BXyBFGtxBV", "hezhi-db");
+	$link =	mysqli_connect("oniddb.cws.oregonstate.edu","liaoi-db", "mdBZ3VXbJPmPqATM", "liaoi-db");
 	if(!$link){
 		echo "Cannot be connected!";
 		exit;
