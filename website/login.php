@@ -1,5 +1,4 @@
 <?php
-
 $dbhost = 'oniddb.cws.oregonstate.edu';
 $dbname = 'liaoi-db';
 $dbuser = 'liaoi-db';
@@ -22,9 +21,14 @@ if ($mysqli->connect_errno) {
 
             header("Location: $url");
         }else{
-            echo "404";
+            //echo "404";
+                $aaa['errMsg'] = "Invalid username or password";
         }
 
 $mysqli->close();
 
-?>
+?> 
+<div id="errMsg">
+    <?php if(!empty($aaa['errMsg'])) { echo $aaa['errMsg']; } ?>
+</div>
+<?php unset($aaa['errMsg']); ?>
