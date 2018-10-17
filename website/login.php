@@ -21,8 +21,9 @@ if ($mysqli->connect_errno) {
 
             header("Location: $url");
         }else{
-            //echo "404";
-                $aaa['errMsg'] = "Invalid username or password";
+        	print '<center>Login error</center>';
+        	echo '<center><a href="index.html">return to main page</a><br></center>';
+
         }
 
 $mysqli->close();
