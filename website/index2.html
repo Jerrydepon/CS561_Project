@@ -3,7 +3,7 @@
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width,initial-scale=1" />
 	<title>OSU CS561</title>
 	<link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="index2.css?v=1.44" rel="stylesheet" />
+	<link href="index.css?v=1.44" rel="stylesheet" />
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -14,15 +14,16 @@
 			</button>
 			<a class="navbar-brand" href="index2.html">OSU CS561</a>
 		</div>
-<!-- <?php
-	        $h = $_Get["h"];
-	        echo "$h"
-?> -->
+
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="account.html">Hi user</a>
+				<li class="login"><a href="login.html"><form>
+    <?php if(isset($_GET["h"])):?>
+        <div class="h"></div>
+    <?php endif; ?>
+</form></a>
 				</li>
-				<li><a href="index.html">Logout</a>
+				<li class="signup"><a href="index.html">Logout</a>
 				</li>
 			</ul>
 		</div>
@@ -39,7 +40,9 @@
 					<hr class="intro-divider" />
 					<div class="input-group"><input class="form-control" id="RestaurantName" placeholder="Restaurant Name" type="text" /> <span class="input-group-btn"><button class="btn btn-default" id="button" type="button">Search</button> </span></div>
 &nbsp;
+
 					<div id="msg"></div>
+
 				</div>
 			</div>
 		</div>
@@ -51,10 +54,9 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<p><a href="information.html">Information</a></p>
-
 				<p class="copyright text-muted small">Copyright &copy;OSU CS561 group 2018. All Rights Reserved</p>
 			</div>
 		</div>
 	</div>
 </footer>
-<script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script><script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="index2.js"></script></body><script src="index.php"></script></html>
+<script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script><script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="index.js"></script></body><script src="index.php"></script></html>
