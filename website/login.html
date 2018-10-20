@@ -50,6 +50,11 @@
 								<input align="center" type="submit" id="sbm_btn" value="login">
 							</p>
 						</form>
+						<form>
+    <?php if(isset($_GET["error"])):?>
+        <div class="error">Invalid Username or Password</div>
+    <?php endif; ?>
+</form>
 					</div>
 					<div id="msg">
 

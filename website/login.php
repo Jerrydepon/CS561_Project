@@ -8,6 +8,8 @@ if ($mysqli->connect_errno) {
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
         $url = "http://web.engr.oregonstate.edu/~lujui/index2.html"; 
+        $url2 = "http://web.engr.oregonstate.edu/~lujui/login.html"; 
+
         $account = $_POST["account"];
         $password = $_POST["password"];
 
@@ -22,8 +24,11 @@ if ($mysqli->connect_errno) {
             header("Location: $url?$account");
 
         }else{
-        	print '<center>Login error</center>';
-        	echo '<center><a href="index.html">return to main page</a><br></center>';
+        	// print '<center>Login error</center>';
+        	// echo '<center><a href="index.html">return to main page</a><br></center>';
+            header("Location: $url2?error=1");
+          // die(header("location:login.php?loginFailed=true&reason=password"));
+      
 
         }
 
