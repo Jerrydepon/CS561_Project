@@ -1,9 +1,9 @@
 <?php 
-	$link =	mysqli_connect("oniddb.cws.oregonstate.edu","liaoi-db", "mdBZ3VXbJPmPqATM", "liaoi-db");
-	if(!$link){
-		echo "Cannot be connected!";
-		exit;
-	}
+  $link = mysqli_connect("oniddb.cws.oregonstate.edu","liaoi-db", "swtEVQHNOwq92oF7", "liaoi-db");
+  if(!$link){
+    echo "Cannot be connected!";
+    exit;
+  }
 
     //if($_POST["submit"]){
     if($_GET){

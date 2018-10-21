@@ -13,31 +13,29 @@ if ($mysqli->connect_errno) {
         $account = $_POST["account"];
         $password = $_POST["password"];
 
-        $query1 = "SELECT `account` FROM `534lo` WHERE `account` =  '$account' and `password` = '$password' LIMIT 0 , 30";
+        $query1 = "SELECT * FROM `login_library` WHERE `user_uid` =  '$account' and `user_pwd` = '$password' LIMIT 0 , 30";
 
-
+        $error=0;
         $data1 = mysqli_query($link, $query1);
 
         if (mysqli_num_rows($data1)==1 )
         {
 
-            header("Location: $url?$account");
+            header("Location:index2.html?$account");
 
         }else{
         	// print '<center>Login error</center>';
         	// echo '<center><a href="index.html">return to main page</a><br></center>';
-            header("Location: $url2?error=1");
+            header("Location:login.html?error=1");
           // die(header("location:login.php?loginFailed=true&reason=password"));
-      
-
         }
 
 $mysqli->close();
 
 ?> 
-<div id="errMsg">
+<!-- <div id="errMsg">
     <?php if(!empty($aaa['errMsg'])) { echo $aaa['errMsg']; } ?>
 </div>
 <?php unset($aaa['errMsg']); ?>
 $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-        $new_url = str_replace('login.php', 'index.html', $url);
+        $new_url = str_replace('login.php', 'index.html', $url); -->
