@@ -33,11 +33,16 @@ def crawler(driver):
 
     logging.info("Now testing restaurant recommendation system")
     # search for restaurant recommendation
+    withoutSignupTest = False
     Func_test.test_restaurantSearch(driver)
+
+    logging.info("Now testing sign up function")
+    # test sign up function
+    Func_test.test_signup(driver)
 
     logging.info("Now testing login function")
     # test login function
-    Func_test.test_login(driver)
+    Func_test.test_login(driver, withoutSignupTest)
     sleep(1)
 
 

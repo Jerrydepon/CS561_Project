@@ -9,9 +9,37 @@ from datetime import datetime
 
 import log
 
-def test_login(driver):
-    btn_url = driver.find_element_by_class_name("login").find_element_by_tag_name("a").get_attribute("href")
+def test_signup(driver):
+    btn_url = driver.find_element_by_class_name("signup").find_element_by_tag_name("a").get_attribute("href")
     driver.get(btn_url)
+    s_id_box = driver.find_element_by_css_selector("input[name='uid']")
+    s_pwd_box = driver.find_element_by_css_selector("input[name='pwd']")
+
+    test_id = "test1"
+    test_pwd = test_id
+
+    s_id_box.clear()
+    s_id_box.send_keys(test_id)
+    s_pwd_box.clear()
+    s_pwd_box.send_keys(test_pwd)
+    sleep(1)
+
+    sbm_btn = driver.find_element_by_css_selector(".btn")
+    sbm_btn.click()
+
+    sleep(2)
+    print(driver.current_url)
+
+    if "login.html" in driver.current_url:
+        logging.info("Sign up successfully")
+    else:
+        logging.info("Sign up ERROR!!!")
+
+def test_login(driver, withoutSignup):
+    if withoutSignup == True:
+        btn_url = driver.find_element_by_class_name("login").find_element_by_tag_name("a").get_attribute("href")
+        driver.get(btn_url)
+
     id_box = driver.find_element_by_id("account")
     pwd_box = driver.find_element_by_id("password")
 
@@ -49,6 +77,4 @@ def test_restaurantSearch(driver):
             logging.info("No result. --Successful")
         else: 
             logging.info("Something's wrong...")
-
-
 
