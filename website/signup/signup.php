@@ -15,14 +15,14 @@ if (isset($_POST["submit"])) {
   $pwd = mysqli_real_escape_string($link, $_POST["pwd"]);
   // $uid = $_POST["uid"];
   // $pwd = $_POST["pwd"];
-
+  $successsignup=0;
   // Error handlers
   // Check for empty fields
   if (empty($uid) || empty($pwd)) {
     header("Location: signup.html?signup=empty");
     exit();
   } else {
-    $sql = "SELECT * FROM `test_Jerry` WHERE `user_uid`='$uid'";
+    $sql = "SELECT * FROM `login_library` WHERE `user_uid`='$uid'";
     $result = mysqli_query($link, $sql);
     $resultCheck = mysqli_num_rows($result);
 
@@ -31,11 +31,11 @@ if (isset($_POST["submit"])) {
       exit();
     } else {
       // hashing passwordMeter
-      $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+      // $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
       // insert the user into the database
-      $sql = "INSERT INTO test_Jerry (user_uid, user_pwd) VALUES ('$uid', '$hashedPwd');";
+      $sql = "INSERT INTO login_library (user_uid, user_pwd) VALUES ('$uid', '$pwd');";
       mysqli_query($link, $sql);
-      header("Location: signup.html?signup=success");
+      header("Location: login.html?successsignup=1");
       exit();
     }
   }
