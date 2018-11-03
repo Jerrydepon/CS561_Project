@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 $dbhost = 'oniddb.cws.oregonstate.edu';
 $dbname = 'liaoi-db';
 $dbuser = 'liaoi-db';
@@ -7,35 +10,31 @@ $link = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 if ($mysqli->connect_errno) {
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
-        $url = "http://web.engr.oregonstate.edu/~lujui/index2.html"; 
-        $url2 = "http://web.engr.oregonstate.edu/~lujui/login.html"; 
 
-        $account = $_POST["account"];
-        $password = $_POST["password"];
+if (isset($_POST['submit'])) {
 
-        $query1 = "SELECT * FROM `login_library` WHERE `user_uid` =  '$account' and `user_pwd` = '$password' LIMIT 0 , 30";
+  $uid = mysqli_real_escape_string($link, $_POST["uid"]);
+  $pwd = mysqli_real_escape_string($link, $_POST["pwd"]);
 
-        $error=0;
-        $data1 = mysqli_query($link, $query1);
-
-        if (mysqli_num_rows($data1)==1 )
-        {
-
-            header("Location:index2.html?$account");
-
-        }else{
-        	// print '<center>Login error</center>';
-        	// echo '<center><a href="index.html">return to main page</a><br></center>';
-            header("Location:login.html?error=1");
-          // die(header("location:login.php?loginFailed=true&reason=password"));
-        }
-
-$mysqli->close();
-
-?> 
-<!-- <div id="errMsg">
-    <?php if(!empty($aaa['errMsg'])) { echo $aaa['errMsg']; } ?>
-</div>
-<?php unset($aaa['errMsg']); ?>
-$url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-        $new_url = str_replace('login.php', 'index.html', $url); -->
+  // Error handlers
+  // Check for empty fields
+  if (empty($uid) || empty($pwd)) {
+    header("Location: signup.html?login=empty");
+    exit();
+  } else {
+    $sql = "SELECT * FROM `login_library` WHERE `user_uid`='$uid'";
+    $result = mysqli_query($link, $sql);
+    $resultCheck = mysqli_num_rows($result);
+    if ($resultCheck < 1) {
+      header("location: index.php?login=Aerror");
+      exit();
+    } else {
+        $_SESSION['u_id'] = $row['user_id'];
+        $_SESSION['u_uid'] = $row['user_uid'];
+        header("location: index2.html?$u_uid");
+    }
+  }
+} else {
+    header("location: index.php?login=Berror");
+    exit();
+}
