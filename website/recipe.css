@@ -11,7 +11,7 @@ body,html {
 	padding-top: 50px;
 	padding-bottom: 50px;
 	color: #f8f8f8;
-	background: url(recipe.jpg) no-repeat center center;
+	background: url(recipe1.jpg) no-repeat center center;
 	background-size: cover
 }
 
@@ -72,6 +72,13 @@ width:90%; margin:0 auto;
 		margin-bottom: 0
 	}
 */
+
+.re-recipe{
+  text-align: center;
+  table-layout: center;
+  width: 100%;
+  border: 5px solid transparent;
+}
 	.intro-divider {
 		width: 100%
 	}
