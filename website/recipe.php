@@ -32,6 +32,7 @@
 
 
 
+
 <?php
   for($i=1;$i<=mysqli_num_rows($data1);$i++){
 $rs=mysqli_fetch_row($data1);
