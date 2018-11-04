@@ -1,4 +1,6 @@
 <?php 
+  session_start();
+  
 	$link =	mysqli_connect("oniddb.cws.oregonstate.edu","liaoi-db", "swtEVQHNOwq92oF7", "liaoi-db");
 	if(!$link){
 		echo "Cannot be connected!";
