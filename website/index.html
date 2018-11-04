@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -16,10 +20,10 @@
 		</div>
 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-			<ul class="nav navbar-nav navbar-right">
+			<ul class="nav navbar-nav navbar-right" action="includes/login.php" method="POST">
 				<li class="login"><a href="login.html">Log In</a>
 				</li>
-				<li class="signup"><a href="signup.html">Sign Up</a>
+				<li class="signup"><a href="signup/signup.html">Sign Up</a>
 				</li>
 			</ul>
 		</div>

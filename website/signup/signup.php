@@ -41,6 +41,6 @@ if (isset($_POST["submit"])) {
   }
 
 } else {
-  header("Location: signup.html?QQ");
+  header("Location: signup.html?signup=error");
   exit();
 }
