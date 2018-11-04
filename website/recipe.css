@@ -75,9 +75,9 @@ width:90%; margin:0 auto;
 
 .re-recipe{
   text-align: center;
-  margin:0 auto;
+  table-layout: center;
   width: 100%;
-  border: 2px solid;
+  border: 5px solid transparent;
 }
 	.intro-divider {
 		width: 100%
