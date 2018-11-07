@@ -19,22 +19,23 @@ if (isset($_POST['submit'])) {
   // Error handlers
   // Check for empty fields
   if (empty($uid) || empty($pwd)) {
-    header("Location: signup.html?login=empty");
+    header("Location: login.html?login=empty");
     exit();
   } else {
     $sql = "SELECT * FROM `login_library` WHERE `user_uid`='$uid'";
     $result = mysqli_query($link, $sql);
     $resultCheck = mysqli_num_rows($result);
     if ($resultCheck < 1) {
-      header("location: index.php?login=Aerror");
+      header("location: login.html?login=error");
       exit();
     } else {
         $_SESSION['u_id'] = $row['user_id'];
         $_SESSION['u_uid'] = $row['user_uid'];
         header("location: index2.html?$u_uid");
+
     }
   }
 } else {
-    header("location: index.php?login=Berror");
+    header("location: login.html?login=error");
     exit();
 }

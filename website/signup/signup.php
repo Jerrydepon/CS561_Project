@@ -48,9 +48,10 @@ if (isset($_POST["submit"])) {
       // $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
       // insert the user into the database
       // $sql = "INSERT INTO login_library (user_uid, user_pwd, email, beef, pork) VALUES ('$uid', '$pwd', '$email','$beef','$pork');";
-      $sql = "INSERT INTO login_library (user_uid, user_pwd, email, beef,pork,chicken,lamb,duck,fish,shrimp) VALUES ('$uid', '$pwd', '$email','$beef','$pork','$chicken','$lamb','$duck','$fish','$shrimp');";
+      $sql = "INSERT INTO login_library (user_uid, user_pwd, email, beef, pork, chicken, lamb, duck, fish, shrimp)
+                      VALUES ('$uid', '$pwd', '$email','$beef','$pork','$chicken','$lamb','$duck','$fish','$shrimp');";
       mysqli_query($link, $sql);
-      header("Location: login.html?successsignup=1");
+      header("Location: ../index2.html");
       exit();
     }
   }
