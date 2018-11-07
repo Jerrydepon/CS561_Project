@@ -29,7 +29,7 @@ def open_crawl():
         driver.close()
         
 def crawler(driver):
-    driver.get("http://web.engr.oregonstate.edu/~lujui/index.html")
+    driver.get("http://web.engr.oregonstate.edu/~lujui/indexmain.php")
 
     logging.info("Now testing restaurant recommendation system")
     # search for restaurant recommendation
@@ -45,7 +45,10 @@ def crawler(driver):
     Func_test.test_login(driver, withoutSignupTest)
     sleep(1)
 
-
+    logging.info("Now testing login function")
+    # test recipe function
+    Func_test.test_recipe(driver)
+    sleep(1)
 
 
 
