@@ -25,7 +25,7 @@ if (isset($_POST["submit"])) {
   $duck=$_POST["duck"];
   $fish=$_POST["fish"];
   $shrimp=$_POST["shrimp"];
-  $kindarry=($_POST["beef"] || '0');
+  // $kindarry=($_POST["beef"] || '0');
   // $newvalue=implode(",",$kindarry);
   // $uid = $_POST["uid"];
   // $pwd = $_POST["pwd"];
@@ -49,7 +49,7 @@ if (isset($_POST["submit"])) {
       // insert the user into the database
       // $sql = "INSERT INTO login_library (user_uid, user_pwd, email, beef, pork) VALUES ('$uid', '$pwd', '$email','$beef','$pork');";
       $sql = "INSERT INTO login_library (user_uid, user_pwd, email, beef, pork, chicken, lamb, duck, fish, shrimp)
-                      VALUES ('$uid', '$pwd', '$email','$beef','$pork','$chicken','$lamb','$duck','$fish','$shrimp');";
+                      VALUES ('$uid', '$pwd', '$email','$beef'|| '0','$pork'|| '0','$chicken'|| '0','$lamb'|| '0','$duck'|| '0','$fish'|| '0','$shrimp' || '0');";
       mysqli_query($link, $sql);
       header("Location: ../index2.html");
       exit();
