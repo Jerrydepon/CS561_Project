@@ -17,9 +17,19 @@
 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
 			<ul class="nav navbar-nav navbar-right">
-				<li class="login"><a href="login.html">Log In</a>
+				li class="login"><a href="login.html">
+				<form>
+				    <?php if(isset($_GET["h"])):?>
+				        <div class="h"></div>
+				    <?php endif; ?>
+				</form></a>
 				</li>
-				<li class="signup"><a href="signup.html">Sign Up</a>
+				<li class="recipe"><a href="recipe_result.php">Find Recipe</a>
+				</li>
+				<li class="potluck"><a href="potluck.html">Potluck</a>
+				</li>
+				<li class="logout"><a href="logout.html">Logout</a>
+				</li>
 				</li>
 			</ul>
 		</div>
