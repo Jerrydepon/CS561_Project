@@ -1,10 +1,9 @@
-<!-- not yet -->
-
-<?php
-
-if (isset($_POST['submit'])) {
-  session_start();
-  session_unset();
-  session_destroy();
-  header("Location: ../index.html");
-}
+<?php 
+   session_start();
+   if($_POST['action'] == 'call_this') {
+   	session_unset();
+   
+   $_SESSION['u_uid'] = NULL;
+   header("Location: indexmain.php");
+	}        
+?>
