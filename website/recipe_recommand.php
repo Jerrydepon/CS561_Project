@@ -1,4 +1,5 @@
 <?php 
+    session_start();
   $link = mysqli_connect("oniddb.cws.oregonstate.edu","liaoi-db", "swtEVQHNOwq92oF7", "liaoi-db");
   if(!$link){
     echo "Cannot be connected!";
@@ -15,7 +16,7 @@
         //$preferrence_6 = $_GET["preferrence6"];
         
 
-        $query0 = "SELECT `user_uid`, `beef`, `pork`, `chicken`, `lamb`, `duck`, `fish`, `shrimp` FROM `login_library`  WHERE `user_uid` = 'test1'";
+        $query0 = "SELECT `user_uid`, `beef`, `pork`, `chicken`, `lamb`, `duck`, `fish`, `shrimp` FROM `login_library`  WHERE `user_uid` = $_SESSION['u_uid']";
         $preferrence = mysqli_query($link, $query0);
         $pref = mysqli_fetch_array($preferrence, MYSQLI_NUM);
         $beef = $pref[1];
