@@ -42,15 +42,10 @@ input[type=submit]{
 }
 
 footer {
-	width: 100%;
 	padding: 50px 50px;
 	background-color: #f8f8f8;
-	height: 50px;
-	position:absolute;
-    bottom:0px;
 }
 
 p.copyright {
 	margin: 15px 0 0;
-	padding-bottom: 50px;
 }

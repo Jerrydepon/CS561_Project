@@ -14,17 +14,24 @@ def test_signup(driver):
     driver.get(btn_url)
     s_id_box = driver.find_element_by_css_selector("input[name='uid']")
     s_pwd_box = driver.find_element_by_css_selector("input[name='pwd']")
+    s_email_box = driver.find_element_by_css_selector("input[name='email']")
 
     test_id = "test1"
     test_pwd = test_id
+    test_email = "test1@fjsdo.com"
 
     s_id_box.clear()
     s_id_box.send_keys(test_id)
     s_pwd_box.clear()
     s_pwd_box.send_keys(test_pwd)
+    s_email_box.clear()
+    s_email_box.send_keys(test_email)
+    driver.find_element_by_css_selector("input[name='beef']").click()
+    driver.find_element_by_css_selector("input[name='chicken']").click()
+    driver.find_element_by_css_selector("input[name='fish']").click()
     sleep(1)
 
-    sbm_btn = driver.find_element_by_css_selector(".btn")
+    sbm_btn = driver.find_element_by_css_selector("input[name='submit']")
     sbm_btn.click()
 
     sleep(2)
@@ -82,7 +89,26 @@ def test_recipe(driver):
     btn_url = driver.find_element_by_class_name("recipe").find_element_by_tag_name("a").get_attribute("href")
     driver.get(btn_url)
     
-    if "login.html" in driver.current_url:
-        logging.info("Sign up successfully")
+    if "recipe.html" in driver.current_url:
+        logging.info("Successfully enter find recipe page.")
     else:
-        logging.info("Sign up ERROR!!!")
+        logging.info("ERROR entering recipe page!!!")
+
+    search_box = driver.find_element_by_id("recipename")
+    search_box.clear()
+    search_box.send_keys("fish")
+    sleep(1)
+
+    srch_btn = driver.find_element_by_id("button")
+    srch_btn.click()
+
+    sleep(2)
+
+    if driver.find_elements_by_tag_name("tbody"):
+        logging.info("Successfully finished searching ")
+    else:
+        if driver.find_element_by_id("msg") == "Not found":
+            logging.info("No result. --Successful")
+        else: 
+            logging.info("Something's wrong...")
+    
