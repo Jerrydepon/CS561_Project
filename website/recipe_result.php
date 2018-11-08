@@ -6,7 +6,6 @@
 	<link href="recipe.css?v=1.44" rel="stylesheet" />
 </head>
 <body>
-	<?php echo 'ddd'; ?>
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -38,7 +37,7 @@
 			<div class="col-lg-12">
 				<div class="re-recipe">
 					<div style="color:#FFFF26"> <h3>Food Recommendation:</h3></div>
-						
+						<?php echo 'ddd'; ?>
 					</div>
 					<div class="intro-message">
 						<h1>Find a Recipe</h1>

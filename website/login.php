@@ -29,9 +29,8 @@ if (isset($_POST['submit'])) {
       header("location: login.html?login=error");
       exit();
     } else {
-        $_SESSION['u_id'] = $row['user_id'];
-        $_SESSION['u_uid'] = $row['user_uid'];
-        header("location: index2.html?$u_uid");
+        $_SESSION['u_uid'] = $uid;
+        header("location: indexmain.php");
 
     }
   }
