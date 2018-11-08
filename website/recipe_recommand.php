@@ -15,8 +15,8 @@
         //$preferrence_5 = $_GET["preferrence5"];
         //$preferrence_6 = $_GET["preferrence6"];
         
-
-        $query0 = "SELECT `user_uid`, `beef`, `pork`, `chicken`, `lamb`, `duck`, `fish`, `shrimp` FROM `login_library`  WHERE `user_uid` = $_SESSION['u_uid']";
+        $user = $_SESSION['u_uid'];
+        $query0 = "SELECT `user_uid`, `beef`, `pork`, `chicken`, `lamb`, `duck`, `fish`, `shrimp` FROM `login_library`  WHERE `user_uid` = '$user'";
         $preferrence = mysqli_query($link, $query0);
         $pref = mysqli_fetch_array($preferrence, MYSQLI_NUM);
         $beef = $pref[1];
