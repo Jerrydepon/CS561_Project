@@ -1,4 +1,5 @@
 <?php 
+    session_start();
   $link = mysqli_connect("oniddb.cws.oregonstate.edu","liaoi-db", "swtEVQHNOwq92oF7", "liaoi-db");
   if(!$link){
     echo "Cannot be connected!";
@@ -15,7 +16,7 @@
         //$preferrence_6 = $_GET["preferrence6"];
         
 
-        $query0 = "SELECT `user_uid`, `beef`, `pork`, `chicken`, `lamb`, `duck`, `fish`, `shrimp` FROM `login_library`  WHERE `user_uid` = 'test1'";
+        $query0 = "SELECT `user_uid`, `beef`, `pork`, `chicken`, `lamb`, `duck`, `fish`, `shrimp` FROM `login_library`  WHERE `user_uid` = $_SESSION['u_uid']";
         $preferrence = mysqli_query($link, $query0);
         $pref = mysqli_fetch_array($preferrence, MYSQLI_NUM);
         $beef = $pref[1];
@@ -161,21 +162,8 @@
         $rs = $rows[rand(0,$count)];
         $recommand_name=$rs[0];
         echo $recommand_name;
+        // $_POST["$recommand_name"];
 ?>
 
- <table width="700" border="1" align="center">
-    <tr>
-     <td >Title</td>
-     <td >Ingredients</td>
-     <td >Instructions</td>
-   </tr>
-<?php
-//  $rs=mysqli_fetch_array($data1, rand(0,$max));
-?>
-   <tr>
-     <td><?php echo $rs[0]?></td>
-     <td><?php echo $rs[1]?></td>
-     <td><?php echo $rs[2]?></td>
-   </tr>
             
     
