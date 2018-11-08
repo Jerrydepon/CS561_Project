@@ -54,7 +54,7 @@ def test_login(driver, withoutSignup):
 
     sleep(2)
 
-    if "index2.html" in driver.current_url:
+    if driver.find_elements_by_class_name("logout").size() > 0:
         logging.info("Successfully logged in ")
     else:
         logging.info("Login error")
@@ -78,3 +78,11 @@ def test_restaurantSearch(driver):
         else: 
             logging.info("Something's wrong...")
 
+def test_recipe(driver):
+    btn_url = driver.find_element_by_class_name("recipe").find_element_by_tag_name("a").get_attribute("href")
+    driver.get(btn_url)
+    
+    if "login.html" in driver.current_url:
+        logging.info("Sign up successfully")
+    else:
+        logging.info("Sign up ERROR!!!")
