@@ -1,6 +1,7 @@
 <?php
   session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -42,7 +43,7 @@
 					?></a>
 				</li>
 				<li class="logout"><a href="" onclick="logout()">Logout</a>
-					<?php 
+					<?php
 					   	session_start();
 					   	if($_POST['action'] == 'call_this') {
 					   		session_unset();
@@ -62,8 +63,8 @@
 	<div class="infos">
 		<h2> User Profile
 		<hr>
-		<form class="info_form" action="change.php" method="get"> 
-				<!-- action="/action_page.php" -->
+		<form class="info_form" action="change.php" method="get">
+				action="/action_page.php"
 			<h3>Old Name: <input type="text" id="ouid" name="ouid"><br>
 			<h3>Password: <input type="password" id="pwd" name="pwd"><br>
 			<h3>New Name: <input type="text" name="fname"><br>

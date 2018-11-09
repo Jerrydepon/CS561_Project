@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $dbhost = 'oniddb.cws.oregonstate.edu';
 $dbname = 'liaoi-db';
 $dbuser = 'liaoi-db';
@@ -51,7 +53,8 @@ if (isset($_POST["submit"])) {
       $sql = "INSERT INTO login_library (user_uid, user_pwd, email, beef, pork, chicken, lamb, duck, fish, shrimp)
                       VALUES ('$uid', '$pwd', '$email','$beef'|| '0','$pork'|| '0','$chicken'|| '0','$lamb'|| '0','$duck'|| '0','$fish'|| '0','$shrimp' || '0');";
       mysqli_query($link, $sql);
-      header("Location: ../index2.html");
+      $_SESSION['u_uid'] = $uid;
+      header("Location: ../indexmain.php");
       exit();
     }
   }

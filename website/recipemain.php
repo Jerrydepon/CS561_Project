@@ -1,4 +1,8 @@
 <?php
+  include('header.php');
+?>
+
+<!-- <?php
   session_start();
 ?>
 
@@ -33,7 +37,7 @@
 					?></a>
 				</li>
 				<li class="logout"><a href="" onclick="logout()">Logout</a>
-					<?php 
+					<?php
 					   	session_start();
 					   	if($_POST['action'] == 'call_this') {
 					   		session_unset();
@@ -46,7 +50,7 @@
 			</ul>
 		</div>
 	</div>
-</nav>
+</nav> -->
 
 <div class="intro-header">
 	<div class="container">
@@ -55,7 +59,7 @@
 				<div class="re-recipe">
 					<div style="color:#FFFF26"> <h3>Food Recommendation:</h3> </div>
 					<?php include "recipe_recommand.php"; ?>
-					
+
 					</div>
 					<div class="intro-message">
 						<h1>Find a Recipe</h1>
@@ -70,15 +74,6 @@
 	</div>
 </div>
 
-<footer>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<p><a href="information.html">Information</a></p>
-
-				<p class="copyright text-muted small">Copyright &copy;OSU CS561 group 2018. All Rights Reserved</p>
-			</div>
-		</div>
-	</div>
-</footer>
-<script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script><script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="recipe.js"></script></body><script src="recipe.php"></script></html>
+<?php
+  include('footer.php');
+?>
