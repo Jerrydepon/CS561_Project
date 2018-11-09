@@ -1,6 +1,5 @@
 <?php
   session_start();
-  echo $_SESSION['u_uid'];
 ?>
 
 <!DOCTYPE html>
@@ -27,16 +26,20 @@
 				</li>
 				<li class="potluck"><a href="potluck.html">Potluck</a>
 				</li>
-				<li class="userprofile"><a href="userprofile.html">Userprofile</a>
+				<li class="userprofile"><a href="userprofile.html">
+					<?php
+						echo 'Hi ';
+						echo $_SESSION['u_uid'];
+					?></a>
 				</li>
 				<li class="logout"><a href="" onclick="logout()">Logout</a>
 					<?php 
-					   session_start();
-					   if($_POST['action'] == 'call_this') {
-					   	session_unset();
-					   $_SESSION['u_uid'] = NULL;
-					   header("Location: indexmain.php");
-						}        
+					   	session_start();
+					   	if($_POST['action'] == 'call_this') {
+					   		session_unset();
+					   		$_SESSION['u_uid'] = NULL;
+							header("Refresh:0; url=indexmain.php");
+						}
 					?>
 				</li>
 
@@ -51,16 +54,7 @@
 			<div class="col-lg-12">
 				<div class="re-recipe">
 					<div style="color:#FFFF26"> <h3>Food Recommendation:</h3> </div>
-					<table border="5" align="center">
- 					<tr>
-	   					<th>Ingredient</th>
-					    <th>Introduction</th>
-					</tr>
-  					<tr>
-    					<td>January</td>
-    					<td>$100</td>
-  					</tr>
-					</table>
+					<?php include "recipe_recommand.php"; ?>
 					
 					</div>
 					<div class="intro-message">

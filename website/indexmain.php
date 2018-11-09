@@ -37,19 +37,19 @@
 				</li>
 				<li class="userprofile"><a href="userprofile.html">
 					<?php
-						echo 'Find ';
+						echo 'Hi ';
 						echo $_SESSION['u_uid'];
-						echo ' profile';
 					?></a>
 				</li>
 				<li class="logout"><a href="" onclick="logout()">Logout</a>
 					<?php 
-					   session_start();
-					   if($_POST['action'] == 'call_this') {
-					   	session_unset();
-					   $_SESSION['u_uid'] = NULL;
-					   header("Location: indexmain.php");
-						}        
+					   	session_start();
+					   	if($_POST['action'] == 'call_this') {
+					   		session_unset();
+					   		$_SESSION['u_uid'] = NULL;
+					   		// header("Location: indexmain.php");
+					   		header("Refresh:0");
+						}
 					?>
 				</li>
 				</li>

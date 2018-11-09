@@ -4,7 +4,6 @@ $.ajax({type:"GET",url:"index.php",data:{RestaurantName:val},beforeSend:function
 function logout(){
 	$.ajax({
            type: "POST",
-           url: "logout.php",
            data:{action:'call_this'},
            success:function(html) {
              alert(html);
