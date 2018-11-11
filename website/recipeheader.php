@@ -6,7 +6,7 @@
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width,initial-scale=1" />
 	<title>OSU CS561</title>
 	<link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="index.css?v=1.44" rel="stylesheet" />
+	<link href="recipe.css?v=1.44" rel="stylesheet" />
 </head>
 <body>
 
@@ -27,7 +27,7 @@
           <div class="h"></div>
   </form></a>
   				</li>
-  				<li class="recipe"><a href="recipemain.php">Find Recipe</a>
+  				<li class="index"><a href="indexmain.php">Find Restaurant</a>
   				</li>
   				<!-- <li class="potluck"><a href="potluck.html">Potluck</a>
   				</li> -->
