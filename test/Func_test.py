@@ -16,9 +16,11 @@ def test_signup(driver):
     s_pwd_box = driver.find_element_by_css_selector("input[name='pwd']")
     s_email_box = driver.find_element_by_css_selector("input[name='email']")
 
-    test_id = "test1"
+    test_id = "test1" + str(random.randint(1,1000))
     test_pwd = test_id
     test_email = "test1@fjsdo.com"
+
+    print("Sign up with id: ", test_id)
 
     s_id_box.clear()
     s_id_box.send_keys(test_id)
@@ -35,20 +37,29 @@ def test_signup(driver):
     sbm_btn.click()
 
     sleep(2)
-    print(driver.current_url)
+    # print(driver.cusrrent_url)
 
-    if "login.html" in driver.current_url:
+    if "indexmain" in driver.current_url:
         logging.info("Sign up successfully")
     else:
         logging.info("Sign up ERROR!!!")
+
+
+def test_logout(driver):
+    driver.find_element_by_class_name("logout").find_element_by_tag_name("a").click()
+    if len(driver.find_elements_by_class_name("recipe"))> 0:
+        logging.info("log out ERROR!!!")
+    else:
+        logging.info("Logged out")
+
 
 def test_login(driver, withoutSignup):
     if withoutSignup == True:
         btn_url = driver.find_element_by_class_name("login").find_element_by_tag_name("a").get_attribute("href")
         driver.get(btn_url)
 
-    id_box = driver.find_element_by_id("account")
-    pwd_box = driver.find_element_by_id("password")
+    id_box = driver.find_element_by_id("uid")
+    pwd_box = driver.find_element_by_id("pwd")
 
     id_box.clear()
     id_box.send_keys("jerry")
@@ -61,7 +72,7 @@ def test_login(driver, withoutSignup):
 
     sleep(2)
 
-    if driver.find_elements_by_class_name("logout").size() > 0:
+    if len(driver.find_elements_by_class_name("logout")) > 0:
         logging.info("Successfully logged in ")
     else:
         logging.info("Login error")
@@ -89,7 +100,7 @@ def test_recipe(driver):
     btn_url = driver.find_element_by_class_name("recipe").find_element_by_tag_name("a").get_attribute("href")
     driver.get(btn_url)
     
-    if "recipe.html" in driver.current_url:
+    if "recipe" in driver.current_url:
         logging.info("Successfully enter find recipe page.")
     else:
         logging.info("ERROR entering recipe page!!!")
