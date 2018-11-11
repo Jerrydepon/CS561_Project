@@ -31,7 +31,6 @@ if (isset($_POST['submit'])) {
     } else {
         $_SESSION['u_uid'] = $uid;
         header("location: indexmain.php");
-
     }
   }
 } else {

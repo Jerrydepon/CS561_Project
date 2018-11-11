@@ -34,14 +34,15 @@
   				<!-- <li class="userprofile"><a href="userprofile/userprofilemain.php">
   					userprofile</a>
   				</li> -->
-  				<li class="logout"><a href="" onclick="logout()">Logout</a>
+  				<li class="logout"><a href="indexmain.php" onclick="logout()">Logout</a>
   					<?php
   					   	session_start();
   					   	if($_POST['action'] == 'call_this') {
   					   		session_unset();
   					   		$_SESSION['u_uid'] = NULL;
-  					   		// header("Location: indexmain.php");
-  					   		header("Refresh:0");
+                  session_destroy();
+  					   		header("location: indexmain.php");
+                  // exit();
   						}
   					?>
   				</li>

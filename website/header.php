@@ -40,8 +40,10 @@
   					   	if($_POST['action'] == 'call_this') {
   					   		session_unset();
   					   		$_SESSION['u_uid'] = NULL;
+                  session_destroy();
   					   		// header("Location: indexmain.php");
   					   		header("Refresh:0");
+                  exit();
   						}
   					?>
   				</li>
