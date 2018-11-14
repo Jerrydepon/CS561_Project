@@ -58,7 +58,6 @@
 			<div class="col-lg-12">
 				<div class="re-recipe">
 					<div style="color:#FFFF26"> <h3>Food Recommendation:</h3> </div>
-					<?php include "recipe_recommand.php"; ?>
 
 					</div>
 					<div class="intro-message">
