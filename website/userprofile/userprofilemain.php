@@ -1,7 +1,6 @@
 <?php
   session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -27,12 +26,9 @@
         <div class="h"></div>
 </form></a>
 				</li>
-				<li class="recipe"><a href="recipemain.php">
-					<?php
-						echo 'Find ';
-						echo $_SESSION['u_uid'];
-						echo ' recipe';
-					?></a>
+				<li class="restaurant"><a href="indexmain.php">Find Restaurant</a>
+				</li>
+				<li class="recipe"><a href="recipemain.php">Find Recipe</a>
 				</li>
 				<li class="potluck"><a href="potluck.html">Potluck</a>
 				</li>
@@ -47,9 +43,9 @@
 					   	session_start();
 					   	if($_POST['action'] == 'call_this') {
 					   		session_unset();
-					   		$_SESSION['u_uid'] = NULL;
-					   		// header("Location: indexmain.php");
-					   		header("Refresh:0");
+  					   		$_SESSION['u_uid'] = NULL;
+                  			session_destroy();
+  					   		header("location: indexmain.php");
 						}
 					?>
 				</li>
@@ -80,7 +76,7 @@
 			<input type="checkbox" name="fish" value="Car" checked="checked"> Fish<br>
 			<input type="checkbox" name="shrimp" value="Car" checked="checked"> Shrimp<br>
 			</div>
-			<input name="sub" type="submit" value="Submit">
+			<input name="sub" type="submit" value="Submit Change">
 			</form>
 	</div>
 </div>

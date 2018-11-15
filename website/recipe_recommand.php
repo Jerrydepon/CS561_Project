@@ -154,7 +154,7 @@
      if ($count == 0)
         {
             echo "Not found";
-            exit;
+            // exit;
         }
 
 //         //print_r(mysqli_num_rows($data1) == 0);
