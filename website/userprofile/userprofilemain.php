@@ -1,7 +1,6 @@
 <?php
   session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -9,7 +8,6 @@
 	<link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="userprofile.css?v=1.44" rel="stylesheet" />
 </head>
-<?php if ($_SESSION['u_uid']): ?>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
@@ -27,32 +25,29 @@
         <div class="h"></div>
 </form></a>
 				</li>
-				<li class="recipe"><a href="recipemain.php">
-					<?php
-						echo 'Find ';
-						echo $_SESSION['u_uid'];
-						echo ' recipe';
-					?></a>
+				<li class="restaurant"><a href="../indexmain.php">Find Restaurant</a>
 				</li>
-				<li class="potluck"><a href="potluck.html">Potluck</a>
+				<li class="recipe"><a href="../recipemain.php">Find Recipe</a>
 				</li>
-				<li class="userprofile"><a href="userprofile.html">
+				<li class="potluck"><a href="../potluck.html">Potluck</a>
+				</li>
+				<li class="userprofile"><a href="userprofilemain.php">
 					<?php
 						echo 'Hi ';
 						echo $_SESSION['u_uid'];
 					?></a>
 				</li>
 				<li class="logout"><a href="" onclick="logout()">Logout</a>
-					<?php
-					   	session_start();
-					   	if($_POST['action'] == 'call_this') {
-					   		session_unset();
-					   		$_SESSION['u_uid'] = NULL;
-					   		// header("Location: indexmain.php");
-					   		header("Refresh:0");
-						}
-					?>
-				</li>
+  					<?php
+  					   	session_start();
+  					   	if($_POST['action'] == 'call_this') {
+  					   		session_unset();
+  					   		$_SESSION['u_uid'] = NULL;
+                  			session_destroy();
+  					   		header("Location: ../indexmain.php");
+                  			exit();
+  						}
+  					?>
 				</li>
 			</ul>
 		</div>
@@ -63,11 +58,10 @@
 	<div class="infos">
 		<h2> User Profile
 		<hr>
-		<form class="info_form" action="change.php" method="get">
-				action="/action_page.php"
+		<form class="info_form" action="userprofile.php" method="get">
 			<h3>Old Name: <input type="text" id="ouid" name="ouid"><br>
 			<h3>Password: <input type="password" id="pwd" name="pwd"><br>
-			<h3>New Name: <input type="text" name="fname"><br>
+			<h3>New Name: <input type="text" id="nuid" name="nuid"><br>
 			<h3>Old Email: <input type="text" id="oemail" name="oemail"><br>
 			<h3>New Email: <input type="text" id="nemail" name="nemail"><br>
 			<p ><h4>Please select your food preference: <br>
@@ -80,12 +74,15 @@
 			<input type="checkbox" name="fish" value="Car" checked="checked"> Fish<br>
 			<input type="checkbox" name="shrimp" value="Car" checked="checked"> Shrimp<br>
 			</div>
-			<input name="sub" type="submit" value="Submit">
+<!-- 			<input name="submit" type="submit" value="submit">
+ -->			<p id="smt_p">
+                                <input align="center" type="submit" name="submit" id="sbm_btn" value="submit change">
+                            </p>
 			</form>
 	</div>
 </div>
 
-<footer>
+<!-- <footer>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
@@ -95,5 +92,5 @@
 			</div>
 		</div>
 	</div>
-</footer>
+</footer> -->
 <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script><script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="userprofile.js"></script></body><script src="userprofile.php"></script></html>
