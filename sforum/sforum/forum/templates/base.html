@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<title>{% block title %} 簡單的討論板 {% endblock %}</title>
+<link rel=StyleSheet href="scripts/style.css" TYPE="text/css">
+</head>
+ 
+<body>
+<div class="wrapper">
+<div class="heading"><center><h1>簡單的討論板<h1></center></div>
+ 
+<div class="content">
+<div id="entries">
+{% block content %}{% endblock %}
+</div>
+<div id="sidebar">
+{% block sidebar %}{% endblock %}
+</div>
+</div>
+</div>
+</body>
+ 
+</html>
