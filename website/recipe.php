@@ -8,16 +8,32 @@
     //if($_POST["submit"]){
     if($_GET){
         $recipename = $_GET["recipename"];
-        $query1 = "SELECT `title`, `ingredients`, `instructions` FROM `recipe_ar` WHERE `title` LIKE '%$recipename%' LIMIT 0 , 30";
-        $query2 = "SELECT `title`, `ingredients`, `instructions` FROM `recipe_fn` WHERE `title` LIKE '%$recipename%' LIMIT 0 , 30";
-       
-        $data1 = mysqli_query($link, $query1); 
-        $data2 = mysqli_query($link, $query2); 
+        $category = $_GET["category"];
+
+        if($category == "All"){
+          $query1 = "SELECT `title`, `ingredients`, `instructions` FROM `recipe_ar` WHERE `title` LIKE '%$recipename%' OR `ingredients` LIKE '%$recipename%' OR `instructions` LIKE '%$recipename%' LIMIT 0 , 30";
+          $query2 = "SELECT `title`, `ingredients`, `instructions` FROM `recipe_fn` WHERE `title` LIKE '%$recipename%' OR `ingredients` LIKE '%$recipename%' OR `instructions` LIKE '%$recipename%'  LIMIT 0 , 30";
+        }
+        else if($category == "Title"){
+          $query1 = "SELECT `title`, `ingredients`, `instructions` FROM `recipe_ar` WHERE `title` LIKE '%$recipename%' LIMIT 0 , 30";
+          $query2 = "SELECT `title`, `ingredients`, `instructions` FROM `recipe_fn` WHERE `title` LIKE '%$recipename%' LIMIT 0 , 30";
+        }
+        else if($category == "Ingredients"){
+          $query1 = "SELECT `title`, `ingredients`, `instructions` FROM `recipe_ar` WHERE `ingredients` LIKE '%$recipename%' LIMIT 0 , 30";
+          $query2 = "SELECT `title`, `ingredients`, `instructions` FROM `recipe_fn` WHERE `ingredients` LIKE '%$recipename%' LIMIT 0 , 30";
+       }
+        else if($category == "Instructions"){
+          $query1 = "SELECT `title`, `ingredients`, `instructions` FROM `recipe_ar` WHERE `instructions` LIKE '%$recipename%' LIMIT 0 , 30";
+          $query2 = "SELECT `title`, `ingredients`, `instructions` FROM `recipe_fn` WHERE `instructions` LIKE '%$recipename%' LIMIT 0 , 30";
+       }
+        
+        $data1 = mysqli_query($link, $query1);
+        $data2 = mysqli_query($link, $query2);
 
         //print_r(mysqli_num_rows($data1) == 0);
         if (mysqli_num_rows($data1) == 0 && mysqli_num_rows($data2) == 0)
         {
-            echo "Not found";
+            echo "Not found in ". $category;;
             exit;
         }
     }

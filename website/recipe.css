@@ -28,9 +28,18 @@ body,html {
 	text-align: center
 }
 .input-group{
-width:80%; 
-margin:0 auto
+	width:70%; 
+	margin:0 auto;
+	/* display:inline; */
 }
+.input-group-btn{
+	width:20%; 
+}
+select{
+	width:60%;
+	height:30px;
+}
+
 #msg {
 width:90%; margin:0 auto;
 	padding: 15px;
