@@ -1,22 +1,22 @@
 {% extends "templates/base.html" %}
  
 {% block title %}
-簡單的討論版 - 發表回覆文章
+PotLuck - Reply Topic
 {% endblock %}
  
 {% block content %}
 <form action="/{{ subject.id }}/postComment/" method="post">
-<h1>主題名稱：{{ subject.title }}</h1>
-回覆作者：
+<h1>Title：{{ subject.title }}</h1>
+Name：
 <input type="text" name="name"> 
  
-回覆內容：
+Comment：
 <textarea rows="10" cols="70" name="content"></textarea>
-<input type="submit" value="張貼" />
+<input type="submit" value="post" />
 </form>
 {% endblock %}
  
 {% block sidebar %}
-<a href="/">回到首頁</a>
+<a href="/">Home Page</a>
  
 {% endblock %}

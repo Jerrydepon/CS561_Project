@@ -32,4 +32,5 @@ urlpatterns = [
 
     url(r'^scripts/(?P<path>.*)$', serve, {'document_root': './scripts'}),
     path('scripts/', serve, {'document_root': './scripts'}),
+    path(r'^scripts/(?P<path>.*)$', serve, {'document_root': './scripts'}),
 ]

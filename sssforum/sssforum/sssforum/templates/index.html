@@ -1,7 +1,7 @@
 {% extends "templates/base.html" %}
  
 {% block title %}
-簡單的討論版 - 首頁
+PotLuck - Home Page
 {% endblock %}
  
 {% block content %}
@@ -9,17 +9,17 @@
 <ul>
 {% for subject in subject_list %}
 <li> <a href="/{{subject.id}}/">{{ subject.title }}</a>
-作者：{{ subject.name}}；時間：{{ subject.date|date:"Y F j f" }}<p/>
+Authord：{{ subject.name}}；Date：{{ subject.date|date:"Y F j f" }}<p/>
 </li>>
 {% endfor %}
 </ul>
 {% else %}
-目前尚無主題.........
+No Topic.........
  
 {% endif %}
 {% endblock %}
  
 {% block sidebar %}
-<a href="writeSubject">增加新的主題</a>
+<a href="writeSubject">New Topic</a>
  
 {% endblock %}

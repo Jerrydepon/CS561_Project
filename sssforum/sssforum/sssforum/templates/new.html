@@ -1,25 +1,25 @@
 {% extends "templates/base.html" %}
  
 {% block title %}
-簡單的討論版 - 發表新的主題
+PotLuck - Post A New Topic
 {% endblock %}
  
 {% block content %}
 <form action="/postSubject/" method="post">
-主題：
+Title：
 <input type="text" name="title"> 
  
-作者：
+Author：
 <input type="text" name="name"> 
  
-內容：
+Comment：
 <textarea rows="10" cols="70" name="content"></textarea>
 <p/>
-<input type="submit" value="張貼">
+<input type="submit" value="Post">
 </form>
 {% endblock %}
  
 {% block sidebar %}
-<a href="/">回到首頁</a>
+<a href="/">Home Page</a>
  
 {% endblock %}
