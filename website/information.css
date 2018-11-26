@@ -59,13 +59,13 @@ width:80%; margin:0 auto;
 	text-shadow: 2px 2px 3px rgba(0,0,0,0.6)
 }
 
-	.intro-message {
-		padding-bottom: 15%
-	}
-	.intro-message>h1 {
-		font-size: 3em;
-		text-align:center
-	}
+.intro-message {
+	padding-bottom: 15%
+}
+.intro-message>h1 {
+	font-size: 3em;
+	text-align:center
+}
 /*
 	ul.intro-social-buttons>li {
 		display: block;

@@ -29,12 +29,12 @@
   </form></a>
   				</li>
   				<li class="index"><a href="indexmain.php">Find Restaurant</a>
-  				</li>
+					</li>
   				<!-- <li class="potluck"><a href="potluck.html">Potluck</a>
   				</li> -->
-  				<!-- <li class="userprofile"><a href="userprofile/userprofilemain.php">
-  					userprofile</a>
-  				</li> -->
+  				<li class="userprofile"><a href="userprofile/userprofilemain.php">
+  					User Profile</a>
+  				</li>
   				<li class="logout"><a href="indexmain.php" onclick="logout()">Logout</a>
   					<?php
   					   	session_start();
@@ -80,14 +80,26 @@
 			<div class="col-lg-12">
 				<div class="re-recipe">
 					<div style="color:#FFFF26"> <h3>Food Recommendation:</h3> </div>
- 					<?php include ('recipe_recommand.php'); ?>
- 
+					<a href="rcm_result.php" target="_blank" style="color:#FFFFFF">
+						<?php include ('recipe_recommand.php'); ?>
+					</a>
 					</div>
 					<div class="intro-message">
 						<h1>Find a Recipe</h1>
 
 						<hr class="intro-divider" />
-					<div class="input-group"><input class="form-control" id="recipename" placeholder="Find a Recipe" type="text" /> <span class="input-group-btn"><button class="btn btn-default" id="button" type="button">Search</button> </span></div>
+					<div class="input-group">
+						<input class="form-control" id="recipename" placeholder="Find a Recipe" type="text" /> 
+						<span class="input-group-btn">
+							<select name="category" id="category">
+							<option value="All" selected="selected">All</option>
+							　<option value="Title">Title</option>
+							　<option value="Ingredients">Ingredients</option>
+							　<option value="Instructions">Instructions</option>
+							</select>
+							<button class="btn btn-default" id="button" type="button">Search</button> 
+						</span>
+					</div>
 &nbsp;
 					<div id="msg"></div>
 				</div>
@@ -99,4 +111,9 @@
 <?php
   include('footer.php');
 ?>
-<script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script><script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="recipe.js"></script></body><script src="recipe.php"></script></html>
+<script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="recipe.js"></script>
+</body>
+<script src="recipe.php"></script>
+</html>

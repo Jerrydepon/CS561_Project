@@ -162,6 +162,9 @@
 //         $max = mysqli_num_rows($result);
         $rs = $rows[rand(0,$count)];
         $recommand_name=$rs[0];
+        $_SESSION['recommand-title'] = $rs[0];
+        $_SESSION['recommand-ingre'] = $rs[1];
+        $_SESSION['recommand-instruc'] = $rs[2];
         echo $recommand_name;
 ?>
 

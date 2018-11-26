@@ -1,0 +1,32 @@
+{% extends "templates/base.html" %}
+ 
+{% block title %}
+PotLuck - {{ subject.title }}
+{% endblock %}
+ 
+{% block content %}
+<h1>Title：{{ subject.title }}</h1>
+  
+Author：{{ subject.name}} ；Date：{{ subject.date|date:"F j, Y" }}<br /&glt;
+<p><div class="text">{{subject.content}}</div></p>
+ 
+ 
+ 
+{% if comments %}
+<p>** Reply **</p>
+{% for comment in comments %}
+Author：{{ comment.name}}；Date：{{ comment.date|date:"F j, Y" }}
+ 
+<p><div class="text">{{ comment.content }}</div></p>
+{% endfor %}
+{% else %}
+<p>No Comment！</p>
+{% endif %}
+{% endblock %}
+ 
+{% block sidebar %}
+<a href="/">Home Page</a>
+ 
+<a href="add">Reply</a>
+ 
+{% endblock %}

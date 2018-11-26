@@ -1,0 +1,25 @@
+<html>
+ 
+<head>
+<title>{% block title %} PotLuck {% endblock %}</title>
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+</head>
+ 
+<body>
+<div class="wrapper">
+<div class="heading"><center><h1>PotLuck<h1></center></div>
+ 
+<div class="content">
+<div id="entries">
+{% block content %}{% endblock %}
+</div>
+<div id="sidebar">
+{% block sidebar %}{% endblock %}
+</div>
+</div>
+</div>
+</body>
+ 
+</html>

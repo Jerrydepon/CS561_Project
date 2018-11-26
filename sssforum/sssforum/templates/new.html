@@ -1,0 +1,25 @@
+{% extends "templates/base.html" %}
+ 
+{% block title %}
+PotLuck - Post A New Topic
+{% endblock %}
+ 
+{% block content %}
+<form action="/postSubject/" method="post">
+Title：
+<input type="text" name="title"> 
+ 
+Author：
+<input type="text" name="name"> 
+ 
+Comment：
+<textarea rows="10" cols="70" name="content"></textarea>
+<p/>
+<input type="submit" value="Post">
+</form>
+{% endblock %}
+ 
+{% block sidebar %}
+<a href="/">Home Page</a>
+ 
+{% endblock %}
