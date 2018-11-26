@@ -1,0 +1,25 @@
+{% extends "templates/base.html" %}
+ 
+{% block title %}
+PotLuck - Home Page
+{% endblock %}
+ 
+{% block content %}
+{% if subject_list %}
+<ul>
+{% for subject in subject_list %}
+<li> <a href="/{{subject.id}}/">{{ subject.title }}</a>
+Authord：{{ subject.name}}；Date：{{ subject.date|date:"Y F j f" }}<p/>
+</li>>
+{% endfor %}
+</ul>
+{% else %}
+No Topic.........
+ 
+{% endif %}
+{% endblock %}
+ 
+{% block sidebar %}
+<a href="writeSubject">New Topic</a>
+ 
+{% endblock %}

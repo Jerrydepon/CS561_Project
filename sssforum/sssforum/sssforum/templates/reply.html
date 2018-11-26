@@ -1,0 +1,22 @@
+{% extends "templates/base.html" %}
+ 
+{% block title %}
+PotLuck - Reply Topic
+{% endblock %}
+ 
+{% block content %}
+<form action="/{{ subject.id }}/postComment/" method="post">
+<h1>Title：{{ subject.title }}</h1>
+Name：
+<input type="text" name="name"> 
+ 
+Comment：
+<textarea rows="10" cols="70" name="content"></textarea>
+<input type="submit" value="post" />
+</form>
+{% endblock %}
+ 
+{% block sidebar %}
+<a href="/">Home Page</a>
+ 
+{% endblock %}
