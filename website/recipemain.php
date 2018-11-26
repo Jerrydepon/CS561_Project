@@ -29,12 +29,12 @@
   </form></a>
   				</li>
   				<li class="index"><a href="indexmain.php">Find Restaurant</a>
-  				</li>
+					</li>
   				<!-- <li class="potluck"><a href="potluck.html">Potluck</a>
   				</li> -->
-  				<!-- <li class="userprofile"><a href="userprofile/userprofilemain.php">
-  					userprofile</a>
-  				</li> -->
+  				<li class="userprofile"><a href="userprofile/userprofilemain.php">
+  					User Profile</a>
+  				</li>
   				<li class="logout"><a href="indexmain.php" onclick="logout()">Logout</a>
   					<?php
   					   	session_start();
@@ -80,8 +80,9 @@
 			<div class="col-lg-12">
 				<div class="re-recipe">
 					<div style="color:#FFFF26"> <h3>Food Recommendation:</h3> </div>
- 					<?php include ('recipe_recommand.php'); ?>
- 
+					<a href="rcm_result.php" target="_blank" style="color:#FFFFFF">
+						<?php include ('recipe_recommand.php'); ?>
+					</a>
 					</div>
 					<div class="intro-message">
 						<h1>Find a Recipe</h1>
