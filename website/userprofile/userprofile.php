@@ -10,12 +10,12 @@ if ($mysqli->connect_errno) {
 }
 
 if (isset($_POST["submit"])) {
-  header("Location: indexmain.php");
+  // header("Location: ../indexmain.php");
   $id = $_SESSION['u_id'];
-  // $query = "SELECT * FROM `login_library`  WHERE `user_id` = '$id' ";
-  // $result = mysqli_query($link, $query);
-  // $pref = mysqli_fetch_array($result, MYSQLI_NUM);
-
+  $query = "SELECT * FROM `login_library`  WHERE `user_id` = '$id' ";
+  $result = mysqli_query($link, $query);
+  $pref = mysqli_fetch_array($result, MYSQLI_NUM);
+  $oemail=$pref[3];
 
   // $pwd = mysqli_real_escape_string($link, $_POST["pwd"]);
   // $email = mysqli_real_escape_string($link, $_POST["email"]);
@@ -24,7 +24,7 @@ if (isset($_POST["submit"])) {
   //   exit();
   // }
   $username=$_POST["nuid"];
-  $pwd=$_POST["pwd"];
+  // $pwd=$_POST["pwd"];
   $email=$_POST["nemail"];
   $beef=$_POST["beef"];
   $pork=$_POST["pork"];
@@ -35,22 +35,20 @@ if (isset($_POST["submit"])) {
   $shrimp=$_POST["shrimp"];
   // Error handlers
   // Check for empty fields
-  // $sql = "UPDATE login_library SET user_uid='$username' , email= '$email' , beef='$beef'|| '0',pork='$pork'|| '0',chicken='$chicken'|| '0',lamb='$lamb'|| '0',duck='$duck'|| '0',fish='$fish'|| '0',shrimp='$shrimp' || '0'WHERE user_id='$id'";
-
-  // if (mysqli_query($link, $sql)) {
-  //     echo "Record updated successfully";
-  //     session_unset();
-  //     $_SESSION['u_uid'] = NULL;
-  //     session_destroy();
-  //     // header("Location: indexmain.php");
-  //     header("Location: ../indexmain.php?update_success");
-  //     exit();
-  // } else {
-  //     echo "Error updating record: " . mysqli_error($conn);
-  // }
-
+  $sql = "UPDATE `login_library` SET `user_uid`='$username' , `email`= '$email'|| '$oemail' , `beef`='$beef'|| '0',`pork`='$pork'|| '0',`chicken`='$chicken'|| '0',`lamb`='$lamb'|| '0',`duck`='$duck'|| '0',`fish`='$fish'|| '0',`shrimp`='$shrimp' || '0' WHERE `user_id`='$id'";
+  $result=mysqli_query($link, $sql);
+  if ($result) {
+      // echo "Record updated successfully";
+      // session_unset();
+      $_SESSION['u_uid'] = $username;
+      // session_destroy();
+      header("Location: ../indexmain.php?update_success");
+      exit();
+  } else {
+      echo "Error updating record: " . mysqli_error($conn);
+  }
 } else {
-  header("Location: userprofile.php?signup=error");
+  header("Location: userprofile.php?updateprofile=error");
   exit();
 }
 ?>
