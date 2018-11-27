@@ -29,7 +29,12 @@ if (isset($_POST['submit'])) {
       header("location: login.html?login=error");
       exit();
     } else {
+        $query = "SELECT * FROM `login_library`  WHERE `user_uid` = '$uid' ";
+        $result1 = mysqli_query($link, $query);
+        $pref = mysqli_fetch_array($result, MYSQLI_NUM);
+        $id=$pref[0];
         $_SESSION['u_uid'] = $uid;
+        $_SESSION['u_id'] = $id;
         header("location: indexmain.php");
     }
   }

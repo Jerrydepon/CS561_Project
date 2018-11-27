@@ -58,21 +58,20 @@
 	<div class="infos">
 		<h2> User Profile
 		<hr>
-		<form class="info_form" action="userprofile.php" method="get">
+		<form class="info_form" action="userprofile.php" method="POST">
 			<h3>Old Name: <input type="text" id="ouid" name="ouid"><br>
-			<h3>Password: <input type="password" id="pwd" name="pwd"><br>
+			<!-- <h3>Password: <input type="password" id="pwd" name="pwd"><br> -->
 			<h3>New Name: <input type="text" id="nuid" name="nuid"><br>
-			<h3>Old Email: <input type="text" id="oemail" name="oemail"><br>
 			<h3>New Email: <input type="text" id="nemail" name="nemail"><br>
 			<p ><h4>Please select your food preference: <br>
 			<div class='checkboxes'>
-			<input type="checkbox" name="beef" value="Bike" checked="checked"> Beef<br>
-			<input type="checkbox" name="pork" value="Car" checked="checked"> Pork<br>
-			<input type="checkbox" name="chicken" value="Car" checked="checked"> Chicken<br>
-			<input type="checkbox" name="lamb" value="Car" checked="checked"> Lamb<br>
-			<input type="checkbox" name="duck" value="Car" checked="checked"> Duck<br>
-			<input type="checkbox" name="fish" value="Car" checked="checked"> Fish<br>
-			<input type="checkbox" name="shrimp" value="Car" checked="checked"> Shrimp<br>
+			<input type="checkbox" id="beef" value="1" name="beef"> beef
+            <input type="checkbox" id="pork" value="1" name="pork"> pork
+            <input type="checkbox" id="chicken" value="1" name="chicken"> chicken
+            <input type="checkbox" id="lamb" value="1" name="lamb"> lamb
+            <input type="checkbox" id="duck" value="1" name="duck"> duck
+            <input type="checkbox" id="fish" value="1" name="fish"> fish
+            <input type="checkbox" id="shrimp" value="1" name="shrimp"> shrimp
 			</div>
 <!-- 			<input name="submit" type="submit" value="submit">
  -->			<p id="smt_p">
@@ -82,7 +81,7 @@
 	</div>
 </div>
 
-<!-- <footer>
+<footer>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
@@ -92,5 +91,5 @@
 			</div>
 		</div>
 	</div>
-</footer> -->
+</footer>
 <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script><script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="userprofile.js"></script></body><script src="userprofile.php"></script></html>

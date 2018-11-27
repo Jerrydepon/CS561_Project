@@ -1,5 +1,6 @@
 <?php
   session_start();
+  $id=$_SESSION['u_id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,13 +28,15 @@
           <div class="h"></div>
   </form></a>
   				</li>
-  				<li class="recipe"><a href="recipemain.php">Find Recipe</a>
+  				<li class="recipe"><a href="recipemain.php">
+          Find Recipe
+          </a>
   				</li>
   				<!-- <li class="potluck"><a href="potluck.html">Potluck</a>
   				</li> -->
-  				<!-- <li class="userprofile"><a href="userprofile/userprofilemain.php">
+  				<li class="userprofile"><a href="userprofile/userprofilemain.php">
   					userprofile</a>
-  				</li> -->
+  				</li>
   				<li class="logout"><a href="" onclick="logout()">Logout</a>
   					<?php
   					   	session_start();
