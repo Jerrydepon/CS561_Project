@@ -24,8 +24,13 @@ if (isset($_POST["submit"])) {
   //   exit();
   // }
   $username=$_POST["nuid"];
-  // $pwd=$_POST["pwd"];
+  if (!$username){
+    $username=$pref[1];
+  }
   $email=$_POST["nemail"];
+  if (!$email){
+    $email=$pref[3];
+  }
   $beef=$_POST["beef"];
   $pork=$_POST["pork"];
   $chicken=$_POST["chicken"];
@@ -35,7 +40,7 @@ if (isset($_POST["submit"])) {
   $shrimp=$_POST["shrimp"];
   // Error handlers
   // Check for empty fields
-  $sql = "UPDATE `login_library` SET `user_uid`='$username' , `email`= '$email'|| '$oemail' , `beef`='$beef'|| '0',`pork`='$pork'|| '0',`chicken`='$chicken'|| '0',`lamb`='$lamb'|| '0',`duck`='$duck'|| '0',`fish`='$fish'|| '0',`shrimp`='$shrimp' || '0' WHERE `user_id`='$id'";
+  $sql = "UPDATE `login_library` SET `user_uid`='$username' , `email`= '$email' , `beef`='$beef'|| '0',`pork`='$pork'|| '0',`chicken`='$chicken'|| '0',`lamb`='$lamb'|| '0',`duck`='$duck'|| '0',`fish`='$fish'|| '0',`shrimp`='$shrimp' || '0' WHERE `user_id`='$id'";
   $result=mysqli_query($link, $sql);
   if ($result) {
       // echo "Record updated successfully";

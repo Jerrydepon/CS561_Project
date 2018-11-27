@@ -34,7 +34,7 @@
 				<li class="userprofile"><a href="userprofilemain.php">
 					<?php
 						echo 'Hi ';
-						echo $_SESSION['u_uid'];
+						echo $_SESSION['u_id'];
 					?></a>
 				</li>
 				<li class="logout"><a href="" onclick="logout()">Logout</a>
