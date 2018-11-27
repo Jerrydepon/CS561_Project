@@ -31,6 +31,8 @@
   				<li class="recipe"><a href="recipemain.php">
           Find Recipe
           </a>
+          <li class="login"><a href="http://omygod613.pythonanywhere.com/">Discussion</a>
+          </li>
   				</li>
   				<!-- <li class="potluck"><a href="potluck.html">Potluck</a>
   				</li> -->
@@ -38,6 +40,7 @@
   					userprofile</a>
   				</li>
   				<li class="logout"><a href="" onclick="logout()">Logout</a>
+
   					<?php
   					   	session_start();
   					   	if($_POST['action'] == 'call_this') {
@@ -67,6 +70,8 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
         <ul class="nav navbar-nav navbar-right" action="includes/login.php" method="POST">
+          <li class="Dicussion"><a href="http://omygod613.pythonanywhere.com/">Discussion</a>
+          </li>
           <li class="login"><a href="login.html">Log In</a>
           </li>
           <li class="signup"><a href="signup/signup.html">Sign Up</a>

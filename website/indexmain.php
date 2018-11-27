@@ -12,8 +12,7 @@
 					<hr class="intro-divider" />
 					<div class="input-group"><input class="form-control" id="RestaurantName" placeholder="Restaurant Name" type="text" />
 					 <span class="input-group-btn">
-<!-- 					 <div class="custom-select" style= "width:200px;">
- -->					 <select name="category" id="category">
+					 <select name="category" id="category">
 							<option value="All" selected="selected">All</option>
 							　<option value="Name">Restaurant</option>
 							　<option value="City">City</option>
