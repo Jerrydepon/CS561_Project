@@ -29,8 +29,8 @@
 				</li>
 				<li class="recipe"><a href="../recipemain.php">Find Recipe</a>
 				</li>
-				<li class="potluck"><a href="../potluck.html">Potluck</a>
-				</li>
+				<li class="login"><a href="http://omygod613.pythonanywhere.com/">Discussion</a>
+         		 </li>
 				<li class="userprofile"><a href="userprofilemain.php">
 					<?php
 						echo 'Hi ';

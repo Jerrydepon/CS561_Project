@@ -32,6 +32,8 @@
 					</li>
   				<!-- <li class="potluck"><a href="potluck.html">Potluck</a>
   				</li> -->
+          <li class="login"><a href="http://omygod613.pythonanywhere.com/">Discussion</a>
+          </li>
   				<li class="userprofile"><a href="userprofile/userprofilemain.php">
   					User Profile</a>
   				</li>
