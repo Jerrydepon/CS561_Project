@@ -10,7 +10,18 @@
 					<h1>Restaurant Recommendation System</h1>
 
 					<hr class="intro-divider" />
-					<div class="input-group"><input class="form-control" id="RestaurantName" placeholder="Restaurant Name" type="text" /> <span class="input-group-btn"><button class="btn btn-default" id="button" type="button">Search</button> </span></div>
+					<div class="input-group"><input class="form-control" id="RestaurantName" placeholder="Restaurant Name" type="text" />
+					 <span class="input-group-btn">
+<!-- 					 <div class="custom-select" style= "width:200px;">
+ -->					 <select name="category" id="category">
+							<option value="All" selected="selected">All</option>
+							　<option value="Name">Restaurant</option>
+							　<option value="City">City</option>
+							</select>
+					<!-- </div> -->
+					<button class="btn btn-default" id="button" type="button">Search</button>
+				</span>
+				</div>
 &nbsp;
 					<div id="msg"></div>
 

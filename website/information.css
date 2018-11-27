@@ -17,31 +17,24 @@ body,html {
 }
 
 .intro-message {
-	position: relative;
-	background-color:#fff;
-	padding-top: 10%;
+	margin:0 auto;
+/*	background-color:lightblue;
+*/	padding-top: 10%;
 	padding-bottom: 20%;
 	height: 30%;
     width: 30%
 }
 
-.intro-message>h1 {
-	margin: 30;
-	background-color:#fff;
-	text-shadow: 2px 2px 3px rgba(1,1,1,1);
-	font-size: 15em;
-	text-align: center
-}
 .input-group{
 width:80%; 
 margin:0 auto
 }
 #msg {
-width:80%; margin:0 auto;
+width:00%; margin:0 auto;
 	padding: 15px;
 	border: 1px solid transparent;
-	margin-bottom: 20px;
-	margin-top: 20px;
+	margin-bottom: 10px;
+	margin-top: 10px;
 	background: hsla(250,2%,53%,.67);
 	color: #fff;
 	font-size: 1pc;
@@ -66,19 +59,9 @@ width:80%; margin:0 auto;
 	font-size: 3em;
 	text-align:center
 }
-/*
-	ul.intro-social-buttons>li {
-		display: block;
-		margin-bottom: 20px;
-		padding: 0
-	}
 
-	ul.intro-social-buttons>li:last-child {
-		margin-bottom: 0
-	}
-*/
 	.intro-divider {
-		width: 130%
+		width: 100%
 	}
 
 	footer {
@@ -89,3 +72,20 @@ width:80%; margin:0 auto;
 	p.copyright {
 		margin: 15px 0 0
 	}
+.text_div{
+	/*width:50%; */
+	margin:0 auto;
+	padding: 15px;
+	border:solid gray 1px;
+	border-radius: 5px;
+	background: rgba(0,0,0,0.77);
+	text-align: center;
+
+}
+/*.text_div>h2{
+	margin: 0;
+	text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+	font-size: 5em;
+	text-align: center
+	text-color:rgba(1,1,1,0.8;
+}*/
