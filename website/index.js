@@ -12,7 +12,7 @@ function logout(){
            type: "POST",
            data:{action:'call_this'},
            success:function(html) {
-             alert(html);
+             // alert(html);
            }
 
       });
