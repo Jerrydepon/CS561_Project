@@ -11,9 +11,7 @@ function logout(){
 	$.ajax({
            type: "POST",
            data:{action:'call_this'},
-           success:function(html) {
-             alert(html);
-             
+           success:function(html) {             
            }
 
       });
