@@ -19,7 +19,7 @@
                $query2 = "SELECT `Restaurant Name`, `City`,`Country Code`,`Address`,`Aggregate rating`, `dataset`FROM `zomato` WHERE `Restaurant Name` Like '%$RestaurantName%' LIMIT 0 , 30";
                $query3 = "SELECT `store_name`, `store_city`, `store_state`, `store_address`, `store_stars`, `dataset` FROM `yelp_business` WHERE `store_name` LIKE '%$RestaurantName%' LIMIT 0 , 30";
         }
-        else if($category == " City"){
+        else if($category == "City"){
              $query1 = "SELECT `Name`, `City`, `State`, `Country`, `Address`, `Total Review`, `dataset` FROM `Tripadvisor` WHERE `City` LIKE '%$RestaurantName%' LIMIT 0 , 30";
              $query2 = "SELECT `Restaurant Name`, `City`,`Country Code`,`Address`,`Aggregate rating`, `dataset`FROM `zomato` WHERE `City` Like '%$RestaurantName%' LIMIT 0 , 30";
              $query3 = "SELECT `store_name`, `store_city`, `store_state`, `store_address`, `store_stars`, `dataset` FROM `yelp_business` WHERE `store_city` LIKE '%$RestaurantName%' LIMIT 0 , 30";

@@ -37,7 +37,7 @@
   				<!-- <li class="potluck"><a href="potluck.html">Potluck</a>
   				</li> -->
   				<li class="userprofile"><a href="userprofile/userprofilemain.php">
-  					userprofile</a>
+  					User Profile</a>
   				</li>
   				<li class="logout"><a href="" onclick="logout()">Logout</a>
 
