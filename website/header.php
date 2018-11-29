@@ -31,7 +31,7 @@
   				<li class="recipe"><a href="recipemain.php">
           Find Recipe
           </a>
-          <li class="login"><a href="http://omygod613.pythonanywhere.com/">Discussion</a>
+          <li class="discussion"><a href="http://omygod613.pythonanywhere.com/">Discussion</a>
           </li>
   				</li>
   				<!-- <li class="potluck"><a href="potluck.html">Potluck</a>

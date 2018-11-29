@@ -29,7 +29,7 @@
 				</li>
 				<li class="recipe"><a href="../recipemain.php">Find Recipe</a>
 				</li>
-				<li class="login"><a href="http://omygod613.pythonanywhere.com/">Discussion</a>
+				<li class="discussion"><a href="http://omygod613.pythonanywhere.com/">Discussion</a>
          		 </li>
 				<li class="userprofile"><a href="userprofilemain.php">
 					<?php

@@ -29,7 +29,7 @@ def open_crawl():
         driver.close()
         
 def crawler(driver):
-    driver.get("http://web.engr.oregonstate.edu/~lujui/CS561_Project/website/indexmain.php")
+    driver.get("http://people.oregonstate.edu/~wench/CS561/indexmain.php")
 
     logging.info("Now testing restaurant recommendation system")
     # search for restaurant recommendation
@@ -40,13 +40,19 @@ def crawler(driver):
     # test sign up function
     Func_test.test_signup(driver)
 
+    # logging.info("Now testing login function")
+    # # test login function
+    # Func_test.test_login(driver, withoutSignupTest, "test1766", "test1766")
+    # sleep(1)
+
+
     logging.info("Now testing log out function")
     # test log out function
     Func_test.test_logout(driver)
 
     logging.info("Now testing login function")
     # test login function
-    Func_test.test_login(driver, withoutSignupTest)
+    Func_test.test_login(driver, withoutSignupTest, "test1766", "test1766")
     sleep(1)
 
     logging.info("Now testing recipe recommendation system")
@@ -54,7 +60,15 @@ def crawler(driver):
     Func_test.test_recipe(driver)
     sleep(1)
 
+    logging.info("Now testing user profile system")
+    # test userprofile function
+    Func_test.test_userprofile(driver, "test1766", "test1766")
+    sleep(1)
 
+    logging.info("Now testing discussion board system")
+    # test discussion function
+    Func_test.test_discussion(driver)
+    sleep(1) 
 
 if __name__ == "__main__":
     open_crawl()
