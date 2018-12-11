@@ -1,5 +1,5 @@
 # CS561_Project
-Restaurant Recommendation System
+Restaurant Recommendation System  <br />
 2018 Fall
 
 database:https://secure.oregonstate.edu/oniddb/index.php?db=liaoi-db&token=b02e274b688709c66a6b62ff46bb626d
